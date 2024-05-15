@@ -1,5 +1,5 @@
 // Creare un array di oggetti
-const medias = [
+const images = [
     {
         image: 'img/01.webp',
         title: 'Marvel\'s Spiderman Miles Morale',
@@ -27,7 +27,7 @@ const medias = [
     }
 ];
 
-console.log(medias);
+console.log(images);
 
 // **** Creazione elementi bottoni
 const prev = document.getElementById("prev");
@@ -41,20 +41,20 @@ nextBtn.classList.add("next");
 prev.appendChild(prevBtn);
 next.appendChild(nextBtn);
 
-prevBtn.addEventListener("click", handleArrowClick);
-nextBtn.addEventListener("click", handleArrowClick);
+prevBtn.addEventListener("click", handleArrowMinusClick);
+nextBtn.addEventListener("click", handleArrowPlusClick);
 // ****
+
+let i = 0;
 
 // Tramite un ciclo for-each, creare degli elementi per ogni oggetto all'interno del DOM e popolare il carosello
 // Definisco queste variabili fuori dal ciclo e dalla funzione
 const items = document.getElementById("items");
+let imageContainer;
 
+images.forEach((media, index) => {
 
-// imageContainer.classList.add("active");
-
-medias.forEach((media, index) => {
-
-    let imageContainer = document.createElement("div");
+    imageContainer = document.createElement("div");
     imageContainer.classList.add("item");
 
     // Creazione degli elementi HTML per l'immagine, il titolo e il testo
@@ -83,9 +83,38 @@ medias.forEach((media, index) => {
 
 // console.log(imageContainer);
 
-function handleArrowClick() {
-    // console.log("cliccato");
-    
+function handleArrowPlusClick() {
+    // Seleziono tutti gli elementi con classe "active" e gliela rimuovo
+    const activeImage = document.querySelector('.active');
+    activeImage.classList.remove('active');
+    // Seleziono tutti gli elementi che hanno classe "item"
+    const childrens = document.querySelectorAll('.item');
+
+    // Aumento di 1 l'index
+    i++;
+    // Aggiungo il ciclo infinito indicando che se i è >= della lunghezza di childrens allora i deve riassumere il valore di 0
+    if(i >= childrens.length){
+        i = 0
+    };
+
+    // Assegno all'elemento i coorrente la classe "active" per renderlo visibile in pagina
+    childrens[i].classList.add("active");
+}
+
+// Ripeto la funzione ma con indicazioni differenti per tornare all'i precedente
+function handleArrowMinusClick() {
+    const activeImage = document.querySelector('.active');
+    activeImage.classList.remove('active');
+
+    const childrens = document.querySelectorAll('.item');
+
+    i--;
+    if(i < 0){
+        i = childrens.length - 1
+    };
+
+    childrens[i].classList.add("active");
+}
 
     
-}
+
