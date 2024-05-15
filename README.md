@@ -29,5 +29,7 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay. -->
     -Assegnare la classe active al primo elemento dell'array
     -Mettere in ascolto di un click i bottoni delle frecce per cambiare immagine
         -Al cambio dell'immagine, quell'attiva diventerà visibile insieme al proprio titolo e descrizione
-MILESTONE 2
+-MILESTONE 2
     -Tramite un'altra funzione, dare istruzioni che se ci si trova nel primo elemento dell'array, al click della freccia in alto verrà visualizzato l'ultimo e viceversa. In caso contrario seguire il normale ordine
+-BONUS 2
+    -Inserire un setInterval con parametro la funzione per andare all'elemento successivo con durata di 3 secondi

@@ -116,5 +116,8 @@ function handleArrowMinusClick() {
     childrens[i].classList.add("active");
 }
 
+setInterval(handleArrowPlusClick, 3000);
+
+
     
 
