@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.items {
+#items {
     position: relative;
     width: 700px;
     height: 300px;
@@ -33,6 +33,7 @@
 .item.active {
     display: block;
 }
+
 
 .prev, .next {
     width: 20px;

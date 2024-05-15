@@ -20,12 +20,13 @@ Aggiungere bottoni di start/stop e di inversione del meccanismo di autoplay. -->
 
 <!-- Risoluzione del problema: -->
 
--Creare un array di oggetti con  all'interno:
+-Creare un array di oggetti con all'interno:
     -Url dell'immagine
     -Titolo
     -Descrizione
 -MILESTONE 0 & 1
     -Tramite un ciclo for-each, creare degli elementi per ogni oggetto all'interno del DOM e popolare il carosello
+    -Assegnare la classe active al primo elemento dell'array
     -Mettere in ascolto di un click i bottoni delle frecce per cambiare immagine
         -Al cambio dell'immagine, quell'attiva diventerà visibile insieme al proprio titolo e descrizione
 MILESTONE 2
